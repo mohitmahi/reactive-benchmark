@@ -33,7 +33,26 @@ The primary goal of this benchmarking exercise is to evaluate and compare the th
 
 Throughput is a key metric indicating how many requests a web server can handle per second. Higher throughput implies better performance and the ability to serve more users concurrently.
 
-### Benchmarking Command
+## Instructions
+1. Clone the repository:
 
-```sh
-wrk -t10 -c100 -d30s http://127.0.0.1:8080/v1/ -s post.lua
+``
+git clone https://github.com/yourusername/benchmark-repo.git
+cd benchmark-repo
+``
+
+2. Running Jetty HTTP Server:
+
+``./scripts/run_jetty9_benchmark.sh``
+
+3. Running Vert.x HTTP Server:
+
+``./scripts/run_vertx_benchmark.sh``
+
+4. Benchmarking: Execute the wrk command in another terminal window once the server is running:
+
+``wrk -t10 -c100 -d30s http://127.0.0.1:8080/v1/ -s post.lua``
+
+This setup allows you to easily switch between running the Jetty and Vert.x servers by using simple scripts.
+
+
